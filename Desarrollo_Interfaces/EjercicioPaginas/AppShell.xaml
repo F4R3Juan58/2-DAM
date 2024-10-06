@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EjercicioPaginas.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EjercicioPaginas"
+    Title="EjercicioPaginas">
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Login}"
+        Route="Login" />
+
+    <FlyoutItem Title="Inicio" Icon="icon_inicio.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:InicioPage}"
+            Route="InicioPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Perfil" Icon="icon_perfil.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:Perfil2}"
+            Route="PerfilPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Configuración" Icon="icon_configuracion.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate local:ConfiguracionPage}"
+            Route="ConfiguracionPage" />
+    </FlyoutItem>
+
+    
+</Shell>

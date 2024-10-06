@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EjercicioPaginas.ConfiguracionPage"
+             Title="Configuracion"
+             x:Name="ConfiguracionPageEdit"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <VerticalStackLayout>
+        <Label Text="Activar modo noche:" 
+               HorizontalOptions="Center" 
+               TextColor="{DynamicResource TextColor}" 
+               VerticalOptions="CenterAndExpand" />
+        
+        <Switch Toggled="OnSwitchToggled" 
+                OnColor="{DynamicResource TextColor}"
+                HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

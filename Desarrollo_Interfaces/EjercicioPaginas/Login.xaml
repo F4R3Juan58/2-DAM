@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EjercicioPaginas.Login">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="USER"
+            Margin="0,300,0,0"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry
+            Placeholder="User"
+            x:Name="user"
+            Margin="350,20,350,0"
+            HorizontalTextAlignment="Center"/>
+        
+        <Label 
+            Text="PASSWORD"
+            Margin="0,20,0,0"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry
+            Placeholder="Password"
+            x:Name="password"
+            Margin="350,20,350,0"
+            HorizontalTextAlignment="Center"/>
+
+        <HorizontalStackLayout>
+            <Button
+                Text="Register"
+                Margin="355,30,0,0"
+                BorderColor="Black"
+                TextColor="White"
+                Padding="30,10,30,10"
+                Clicked="RegisterButton"/>
+
+            <Button
+                Text="Login"
+                TextColor="Black"
+                BorderColor="Black"
+                Margin="40,30,150,0"
+                Background="Purple"
+                Padding="30,10,30,10"
+                Clicked="LoginButton"/>
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>
