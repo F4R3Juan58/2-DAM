@@ -1,0 +1,87 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioteca.SacarLibros"
+             Title="Sacar Libro"
+             BackgroundColor="AntiqueWhite">
+
+    <VerticalStackLayout>
+        <Label Text="Buscar por:" 
+                TextColor="Black" 
+                 FontAttributes="Bold"
+                 FontSize="24"
+                 HorizontalOptions="Center"
+                 Margin="0,10"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <HorizontalStackLayout Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="Center">
+                <RadioButton GroupName="consulta" 
+                             TextColor="Black"
+                             x:Name="consultaRadioAutor" 
+                             Content="Autor" 
+                             CheckedChanged="OnConsultaChanged"/>
+                <RadioButton GroupName="consulta" 
+                             TextColor="Black"
+                             x:Name="consultaRadioEditorial" 
+                             Content="Editorial" 
+                             CheckedChanged="OnConsultaChanged"/>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center">
+                <Label Text="Selecciona Autor o Editorial" TextColor="Black" HorizontalTextAlignment="Center"/>
+                <ListView x:Name="AutorEditorialListView"
+                          SelectionMode="Single"
+                          ItemSelected="OnAutorEditorialSelected"
+                          HorizontalOptions="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding}" TextColor="Black" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center">
+                <Label Text="Libros del Autor o Editorial seleccionado" TextColor="Black" HorizontalTextAlignment="Center"/>
+                <ListView x:Name="LibrosListView"
+                          SelectionMode="Single"
+                          ItemTapped="OnLibroTapped"
+                          HorizontalOptions="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding}" TextColor="Black" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" >
+                <Label Text="Portada" TextColor="Black" HorizontalTextAlignment="Center"/>
+                <Image x:Name="PortadaImage"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" 
+                       WidthRequest="200"
+                       HeightRequest="300"/>
+            </VerticalStackLayout>
+        </Grid>
+
+        <Button Text="Sacar libro" Clicked="SacarLibro" Margin="10"/>
+        <VerticalStackLayout IsVisible="False" x:Name="sacarLibroInfo">
+            <HorizontalStackLayout>
+                <Label VerticalTextAlignment="Center" TextColor="black" Text="El Sr/Srta " />
+                <Entry x:Name="entryUsuarioSalida" Placeholder="Nombre" TextColor="Black" />
+                <Label VerticalTextAlignment="Center" x:Name="textoSacarLibro" Text=""  TextColor="Black"/>
+            </HorizontalStackLayout>
+            <Image x:Name="sacarLibroImg" WidthRequest="200" HeightRequest="300"/>
+            <Button Text="Confirmar" Clicked="confirmarSalida" Margin="10"/>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

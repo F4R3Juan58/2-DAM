@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Biblioteca.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Biblioteca"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Biblioteca">
+
+    <TabBar>
+        <ShellContent Title="Principal" 
+                      ContentTemplate="{DataTemplate local:Principal}"
+                      Route="Principal"/>
+
+        <ShellContent Title="Alta" 
+                      ContentTemplate="{DataTemplate local:Alta}"
+                      Route="Alta"/>
+
+        <ShellContent Title="Consulta" 
+                      ContentTemplate="{DataTemplate local:Consulta}"
+                      Route="Consulta"/>
+
+        <ShellContent Title="Sacar Libros" 
+              ContentTemplate="{DataTemplate local:SacarLibros}"
+              Route="SacarLibros"/>
+
+        <ShellContent Title="Registro Libros" 
+              ContentTemplate="{DataTemplate local:RegistroSalidas}"
+              Route="RegistroSalidas"/> 
+    </TabBar>
+</Shell>
