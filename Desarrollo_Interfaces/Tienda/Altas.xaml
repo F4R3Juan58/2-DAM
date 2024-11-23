@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tienda.Altas"
+             Title="Altas de Clientes">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Añadir"
+                     IconImageSource="search.png"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="AñadirClicked"/>
+        <ToolbarItem Text="Modificar"
+                     IconImageSource="options.png"
+                     Order="Primary"
+                     Priority="1"
+                     Clicked="ModificarClicked"/>
+        <ToolbarItem Text="Borrar"
+                     IconImageSource="options.png"
+                     Order="Primary"
+                     Priority="2"
+                     Clicked="BorrarClicked"/>
+        <ToolbarItem Text="Limpiar"
+                     IconImageSource="options.png"
+                     Order="Primary"
+                     Priority="3"
+                     Clicked="LimpiarClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <VerticalStackLayout
+        Margin="20"
+        Grid.Column="0">
+            <Image
+            Source="logo.png"
+            WidthRequest="400"/>
+            <Label
+            Text="Clientes:"/>
+            <Frame
+            Margin="0,10,0,0"
+            HeightRequest="500"
+                BackgroundColor="#db88ff">
+                <ListView x:Name="ClienteListView"
+                    SelectionMode="Single"
+                    HorizontalOptions="Center"
+                    ItemTapped="OnClienteTapped"/>
+            </Frame>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout 
+        Margin="20" 
+        HorizontalOptions="Fill"
+        Grid.Column="1">
+
+            <Label
+            Text="Nombre"
+            Margin="0,0,0,5"/>
+            <Entry 
+            HorizontalOptions="Fill"
+            Placeholder="Ingrese el nombre"
+            x:Name="nombreAltas"
+            Margin="0,0,0,10"/>
+
+            <Label
+            Text="Apellidos"
+            Margin="0,0,0,5"/>
+            <Entry 
+            Placeholder="Ingrese el apellido"
+            x:Name="apellidoAltas"
+            Margin="0,0,0,10"/>
+
+            <Label
+            Text="Ciudad"
+            Margin="0,0,0,5"/>
+            <Entry 
+            Placeholder="Ingrese la ciudad"
+            x:Name="ciudadAltas"
+            Margin="0,0,0,10"/>
+
+            <Label
+            Text="Correo Electronico"
+            Margin="0,0,0,5"/>
+            <Entry 
+            Placeholder="Ingrese el correo electronico"
+            x:Name="emailAltas"
+            Margin="0,0,0,10"/>
+
+            <Label
+            Text="Comentarios:"
+            Margin="0,0,0,5"/>
+            <Entry 
+            Placeholder=""
+            x:Name="comentarioAltas"
+            Margin="0,0,0,10"/>
+
+            <HorizontalStackLayout
+            Margin="0,5,0,10">
+                <CheckBox
+                    x:Name="vipCheckbox"/>
+                <Label
+                Text="Vip"
+                VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

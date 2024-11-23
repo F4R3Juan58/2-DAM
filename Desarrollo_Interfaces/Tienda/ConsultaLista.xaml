@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tienda.ConsultaLista"
+             Title="ConsultaLista">
+    <VerticalStackLayout>
+        <HorizontalStackLayout Padding="20,0,0,0" HorizontalOptions="Center">
+            <Picker x:Name="miPicker" Title="Selecciona Ciudad" SelectedIndexChanged="Picker_SelectedIndexChanged" />
+            <VerticalStackLayout Margin="20,0,0,0">
+                <Label Text="VIP" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <CheckBox x:Name="vipCheckBox" CheckedChanged="OnVipCheckedChanged" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <ScrollView Margin="0,20,0,0">
+            <Grid x:Name="clientesGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
